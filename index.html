@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <!-- Title -->
+    <title>Converter</title>
+    <!-- Css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Javascript -->
+    <script defer src="js/index.js"></script>
+    <script defer src="js/logic.js"></script>
+    <script defer src="js/length.js"></script>
+    <script defer src="js/area.js"></script>
+    <script defer src="js/volume.js"></script>
+    <script defer src="js/speed.js"></script>
+    <script defer src="js/weight.js"></script>
+    <script defer src="js/temp.js"></script>
+    <script defer src="js/power.js"></script>
+    <script defer src="js/pressure.js"></script>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+ 
+  <body>
+    <section id="firstSection">
+      <div class="innerContainer">
+        <div class="heading">
+          <img src="img/favicon.ico" alt="" />
+          <h1>Converter</h1>
+        </div>
+        <hr />
+        <div class="subContainer">
+          <div class="box" id="length" onclick="convert('length')">
+            <img src="img/length.png" alt="length" />
+            <p>Length</p>
+          </div>
+          <div class="box" id="area" onclick="convert('area')">
+            <img src="img/area.png" alt="area" />
+            <p>Area</p>
+          </div>
+          <div class="box" id="volume" onclick="convert('volume')">
+            <img src="img/volume.png" alt="volume" />
+            <p>Volume</p>
+          </div>
+          <div class="box" id="speed" onclick="convert('speed')">
+            <img src="img/speed.png" alt="Speed" />
+            <p>Speed</p>
+          </div>
+          <div class="box" id="weight" onclick="convert('weight')">
+            <img src="img/weight.png" alt="Weight" />
+            <p>Weight</p>
+          </div>
+          <div class="box" id="temp" onclick="convert('temp')">
+            <img src="img/temp.png" alt="Temperature" />
+            <p>Temperature</p>
+          </div>
+          <div class="box" id="power" onclick="convert('power')">
+            <img src="img/power.png" alt="power" />
+            <p>Power</p>
+          </div>
+          <div class="box" id="pressure" onclick="convert('pressure')">
+            <img src="img/pressure.png" alt="pressure" />
+            <p>Pressure</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="secondSection">
+      <div class="topContainer">
+        <div class="backIconContainer" id="backIcon" onclick="back()">
+          &leftarrow;
+        </div>
+        <h1 id="topHeading"></h1>
+      </div>
+      <hr />
+      <div class="calcContainer">
+        <div class="inpCont">
+          <label for="convert_from">Convert from: </label>
+          <select name="from" id="convert_from">
+            <option value="" id="item_from_1"></option>
+            <option value="" id="item_from_2"></option>
+            <option value="" id="item_from_3"></option>
+            <option value="" id="item_from_4"></option>
+            <option value="" id="item_from_5"></option>
+            <option value="" id="item_from_6"></option>
+            <option value="" id="item_from_7"></option>
+            <option value="" id="item_from_8"></option>
+            <option value="" id="item_from_9"></option>
+            <option value="" id="item_from_10"></option>
+            <option value="" id="item_from_11"></option>
+            <option value="" id="item_from_12"></option>
+            <option value="" id="item_from_13"></option>
+            <option value="" id="item_from_14"></option>
+            <option value="" id="item_from_15"></option>
+            <option value="" id="item_from_16"></option>
+            <option value="" id="item_from_17"></option>
+          </select>
+          <input
+            type="text"
+            name="number"
+            id="convert_from_input"
+            placeholder="Enter a number"
+          />
+        </div>
+        <div class="inpCont">
+          <label for="convert_top">Convert to: </label>
+          <select name="to" id="convert_to">
+            <option value="" id="item_to_1"></option>
+            <option value="" id="item_to_2"></option>
+            <option value="" id="item_to_3"></option>
+            <option value="" id="item_to_4"></option>
+            <option value="" id="item_to_5"></option>
+            <option value="" id="item_to_6"></option>
+            <option value="" id="item_to_7"></option>
+            <option value="" id="item_to_8"></option>
+            <option value="" id="item_to_9"></option>
+            <option value="" id="item_to_10"></option>
+            <option value="" id="item_to_11"></option>
+            <option value="" id="item_to_12"></option>
+            <option value="" id="item_to_13"></option>
+            <option value="" id="item_to_14"></option>
+            <option value="" id="item_to_15"></option>
+            <option value="" id="item_to_16"></option>
+            <option value="" id="item_to_17"></option>
+          </select>
+          <input
+            type="text"
+            name="number"
+            id="convert_to_output"
+            placeholder="--output"
+          />
+        </div>
+        <div class="numPad">
+          <div class="row">
+            <button onclick="removeAll()">C</button>
+            <button onclick="removeLast()">x</button>
+            <button id="equals">=</button>
+          </div>
+          <div class="row">
+            <button onclick="showNumbers(7)">7</button>
+            <button onclick="showNumbers(8)">8</button>
+            <button onclick="showNumbers(9)">9</button>
+          </div>
+          <div class="row">
+            <button onclick="showNumbers(4)">4</button>
+            <button onclick="showNumbers(5)">5</button>
+            <button onclick="showNumbers(6)">6</button>
+          </div>
+          <div class="row">
+            <button onclick="showNumbers(1)">1</button>
+            <button onclick="showNumbers(2)">2</button>
+            <button onclick="showNumbers(3)">3</button>
+          </div>
+          <div class="row">
+            <button onclick="addTwoZeros()">00</button>
+            <button onclick="showNumbers(0)">0</button>
+            <button onclick="addDecimal()">.</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
